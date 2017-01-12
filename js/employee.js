@@ -1,17 +1,18 @@
 'use strict'
 
-var Employee = function (employeeID, fname, sname, phone, employeeType, experiencLevel) {
+var Employee = function (employeeID, name, phone, employeeType, experiencLevel) {
 	this.employeeID = employeeID;
-	this.fname = fname;
-	this.sname = sname;
+	this.name = name;
 	this.phone = phone;
 	this.employeeType = employeeType;
 	this.experiencLevel = experiencLevel;
-	this.saveEmployee = function () {
-		
+	this.allEmployees = [];
+	this.saveEmployee = function (employeeID, name, phone, employeeType, experiencLevel) {
+		var obj = new Employee(employeeID, name, phone, employeeType, experiencLevel)
+		this.allEmployees.push(obj);
 	};
-	this.getEmployee = function () {
-		return this;
+	this.getEmployees = function () {
+		return this.allEmployees;
 	};
 }
 
