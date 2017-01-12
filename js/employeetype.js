@@ -1,5 +1,5 @@
 'use strict';
-var myApp = require("../js/salary.js");
+var myApp = require("salary.js");
 module.exports = {
 	EmployeeType: function(){
 		this.getEmployee = getEmployee;
