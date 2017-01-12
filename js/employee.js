@@ -1,5 +1,5 @@
 'use strict'
-//require ('jquery-3.1.1.min.js');
+
 var employeetype = require('employeetype.js');
 var Employee = function (employeeID, name, phone, employeeType, experiencLevel) {
 	this.emplyeeID = employeeID;
@@ -11,12 +11,12 @@ var Employee = function (employeeID, name, phone, employeeType, experiencLevel) 
 	this.saveEmployee = function (employeeID, name, phone, employeeType, experiencLevel) {
 		var obj = new Employee(employeeID, name, phone, employeeType, experiencLevel);
   		var text = JSON.stringify(obj);
-		localStorage.setItem("Employees", text);
-
+		//localStorage.setItem("Employees", text);
+		this.allEmployees.push(obj);
 	};
 	this.getEmployees = function () {
-		var allEmployees = parseInt(localStorage.getItem("Employees")); 
-		return allEmployees;
+		//var allEmployees = parseInt(localStorage.getItem("Employees")); 
+		return this.allEmployees;
 	};
 
 }
@@ -24,12 +24,8 @@ var Employee = function (employeeID, name, phone, employeeType, experiencLevel) 
 module.exports = Employee;
 
 var emp = new Employee();
-console.log(emp.getEmployees());
 var employee = employeetype.getEmployee(this.employeeID, this.allEmployees);
 var salary = employeetype.getsalary(employee);
-
-console.log(salary);
-
 
 
 
