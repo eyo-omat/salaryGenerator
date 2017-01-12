@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Salary Generator</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<script type="text/javascript" src="./js/save.js"></script>
+	<script type="text/javascript" src="./js/generate.js"></script>
+</head>
+<body>
+	<h1>SALARY GENERATOR<h1>
+	<H5></H5>
+		<form id="employeeForm" method="post">
+			<fieldset>
+			<p><input type="text" name="employeeId" placeholder="Employee ID"></p>
+			<p><input type="text" name="Name" placeholder="Name"></p>
+			<p><input type="number" name="phoneNumber" placeholder="Phone Number"></p>			
+			<p>
+				<label>Employee Level</label>
+				<select name="employeeType" id = "employeeType">
+	               <option value = "interns" selected>Interns</option>
+	               <option value = "associates">Associates</option>
+	               <option value = "managers">Managers</option>
+	               <option value = "excutives">Excutives</option>
+	               <option value = "directors">Directors</option>
+             	</select>
+			</p>
+			<p>
+				<label>Experience Level</label>
+				<input type="radio" name="experienceExp" value="Senior">Senior
+				<input type="radio" name="experienceExp" value="Junior">Junior<br>
+			</p>
+			
+			<p><input type="submit" value="Save" id="submitform" onclick="submitform()"></p>
+			</fieldset>
+			</form>
+
+			<form id="searchform">
+				<fieldset>
+					<input type="text" name="employeeId" placeholder="Employee ID">
+					<input type="submit" value="Generate" onclick="generateReport()">
+				</fieldset>	
+			</form>
+
+			<div class="reportpage">
+				<h3>SALARY REPORT</h3>
+				<pre id="result">
+				</pre>
+			</div>
+	
+</body>
+</html>
